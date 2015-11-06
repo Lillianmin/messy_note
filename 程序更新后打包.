@@ -1,0 +1,41 @@
+
+程序更新后打包
+
+mips环境下编译。
+如果源文件没有拷到mips下面，先用svn co将文件更新下来再编译。
+
+将打包的文件夹svn co下来。
+
+mkopt_isofs.sh opt.esong
+
+scp opt.esong.iso root@192.168.4.10:/var/www/data/www/pub/ebook/lcd/........../system.upg
+
+
+
+       cd produce
+
+  542  ls
+  543  cd opt.rui
+  544  cd opt.shenchuang
+  545  svn info
+  546  cd ..
+  547  svn co http://192.168.4.110:1234/svn/produce/opt/opt.ruitu                //
+  548  cd opt.ruitu//image/opt/Qtopia/
+  549  ls
+  550  cd lib/
+  551  ll -tr
+  552  cd. .
+  553  cd ..
+  554  cd ..
+  555  cd ..
+  556  cd ..
+  557  cd ..
+  558  chown mll.mll opt.ruitu/ -R 
+  559  mkopt_isofs.sh opt.ruitu  //root user
+  560  ll opt.ruitu.iso 
+  561  scp opt.ruitu.iso root@192.168.4.10:/var/www/data/www/pub/ebook/lcd/kumeitft/system.upg.07
+
+
+        mipsel-linux-strip /opt/Qtopia/qt4.4/mips/lib/libeinkpdf.so.1.0.0
+  606  cp /opt/Qtopia/qt4.4/mips/lib/libeinkpdf.so.1.0.0 /opt/produce/opt.ruitu/image/opt/Qtopia/lib
+

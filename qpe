@@ -1,0 +1,42 @@
+/opt/Qtopia/qt4.4/x86/bin
+
+qpe.v68
+
+rm  diarymemo 
+
+ln -s  quicklauncher   diarymemo
+
+svn  info
+
+svn ci 
+
+svn ci -m ""
+
+apt-get install
+
+apt-cache search
+
+/opt/Qtopia/qt4.4/x86/etc.v68
+
+
+zlsapplnk.conf
+zlsapplnk_zh_CN.conf
+
+ svn up
+
+ svn diff mupdfrender.h
+ 
+ svn add mupdfrender07.cpp mupdfrender07.h 
+ 
+ svn ci
+ 
+ 
+ history
+ 
+
+git
+
+ctags
+
+svn co http://192.168.4.110:1234/svn/produce/opt/opt.anhong
+

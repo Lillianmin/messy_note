@@ -1,0 +1,125 @@
+一.自定义的nested view或者控件，在XML中的使用
+1.自定义view或者控件要声明为public static
+2.重载父类的两个构造函数,super.构造函数()；应该为重载构造函数的第一句
+3.在XML中使用时，用<view class="package.name.ClassName$NestedClassName"/>来添加
+4.自定义控件时，如果在onDraw里有动作，但没有自定义onDraw的方法，记得用super.onDraw(c);
+
+二.如果你重载了父类的某些函数，比如onResume(),onStart()等， 记得将super.函数名()写上。
+
+三.横竖屏切换，保持原有状态：
+1.
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putInt("page", bookRender.getCurrentPage());
+		super.onSaveInstanceState(outState); 
+	}
+2.onCreate(Bundle savedInstanceBundle) {
+	setupUI();
+	setupListener();
+	init();setupUI与setupListener里有相关操作与init有关。
+	//在相关的UI设置及初使化后来恢复保存的数据。否则可能会因为没有初使化而出错。
+	if(savedInstanceState != null) {
+		Log.v(TAG, "savedInstanceState is not null");
+		int page = savedInstanceState.getInt("page", 0);
+		if(page != 0) {
+		Log.v(TAG, "page is not 0");
+		bookRender.loadPage(page);
+		}
+	}
+}
+
+四.Handler, Thread, Looper, Runnable, Message.
+a. Thread, Looper, Message
+Can't create handler inside thread that has not called Looper.prepare()
+Only the original thread that created a view hierarchy can touch its views.
+
+new Thread() {
+			public void run() {
+				Looper.prepare();
+		if(mHandler == null) {
+			mHandler = new Handler() {
+				public void handleMessage(Message msg) {
+					switch(msg.what) {
+					case UPDATE_BOOKVIEW:
+						bookView.postInvalidate();
+						pageSeek.setProgress(bookRender.getCurrentPage());
+						break;
+					default:
+						break;
+					}
+				}
+			};
+		}
+		Looper.loop();
+		}
+			}.start();
+
+b. Handler, Message.
+                if(mHandler == null) {
+                        mHandler = new Handler() {
+                                public void handleMessage(Message msg) {
+                                        switch(msg.what) {
+                                        case UPDATE_BOOKVIEW:
+                                                bookView.invalidate();
+                                                pageSeek.setProgress(bookRender.getCurrentPage());
+                                                break;
+                                        default:
+                                                break;
+                                        }
+                                }
+                        };
+                }
+
+//Handler sendMessage.
+		Message msg = Message.obtain(mHandler);
+		msg.what=UPDATE_BOOKVIEW;
+		msg.obj=bookView;
+		if(mHandler.hasMessages(UPDATE_BOOKVIEW))
+			mHandler.removeMessages(UPDATE_BOOKVIEW);
+		mHandler.sendMessage(msg);
+
+c. Handler, Runnable.
+//Handler.post(r) & Runnable
+		if(mHandler == null) {
+			mHandler = new Handler();
+		}
+		
+		mRunnable = new Runnable() {//Still in main Thread. Hasn't create new thread.
+			public void run() {
+				bookView.invalidate();
+				pageSeek.setProgress(bookRender.getCurrentPage());
+			}
+		};
+
+		mHandler.post(mRunnable);
+
+d. Thread.
+		new Thread() {
+			public void run() {
+				bookView.postInvalidate();
+				pageSeek.setProgress(bookRender.getCurrentPage());
+			}
+		}.start();
+
+e. Thread, Runnable.
+mRunnable = new Runnable() {//Still in main Thread. Hasn't create new thread.
+                        public void run() {
+                                bookView.postInvalidate();
+                                pageSeek.setProgress(bookRender.getCurrentPage());
+                        }
+                };
+
+private Thread th = new Thread(mRunnable);
+th.start();
+
+五.SurfaceView。
+SurfaceHolder.lockCanvas() return null;
+A null is returned if the surface has not been created or otherwise cannot be edited.
+在bookmainview.xml中添加了自定义的SurfaceView组件，但执行时，总是没有进入SurfaceHolder的回调函数public void surfaceCreated(SurfaceHolder holder)；
+最后发现，
+			surfaceHolder = this.getHolder();//获取holder 
+			surfaceHolder.addCallback(this);
+是在构造函数public BookView(Context context)中实例化的。
+将实例化改在构造函数public BookView(Context context, AttributeSet attrs)中，就进入了回调函数。
+说明，在setContentView(R.id.bookmainview);中，调用的是public BookView(Context context, AttributeSet attrs)构造函数。//此前在将自定义View加入到XML Layout中时,有看到需要添加public BookView(Context context, AttributeSet attrs)构造函数。却又在这里犯了同样的错误！！！！！！
+

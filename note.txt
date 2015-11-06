@@ -1,0 +1,11 @@
+在android工程中生成jni的话。需要进入包的上级目录。比如说对于工程zl.android.ebook
+进入到$工程目录/bin.
+然后执行：
+javah -classpath . -d ../jni zl.android.ebook.CalActivationCode
+这里的关键是，类名是：zl.android.ebook.CalActivationCode，而不是CalActivationCode。
+所以之前进入到$工程目录/bin/zl/android/ebook 执行javah -classpath . -d ../jni CalActivationCode
+提示：
+错误：无法访问 CalActivationCode
+错误的类文件： ./CalActivationCode.class
+类文件包含错误的类： zl.android.ebook.CalActivationCode
+请删除该文件或确保该文件位于正确的类路径子目录中。

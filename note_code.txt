@@ -1,0 +1,128 @@
+ActivityGroup
+    private LinearLayout containner;
+    privite Intent intent = new Intent(this, XX.class);
+    private View view = getLoaclActivityManager().startActivity(intent, "subActivity").getDecorView();
+    int width = LayoutParams.FILL_PARENTS;
+    int height = LayoutParams.FILL_PARENTS;
+    container = (LinaerLayout)findViewById(R.id.XX);
+    contatiner.addView(view, width, height);
+    
+
+Activity Life circle
+硬件设备，activity配置有android:configChanges="orientation"：
+    onCreate() onStart() onResume() onPause() onStop() onDestroy()
+    A->B->A: A.onCreate() A.onStart() A.onResume() ->A.onPause() B.onCreate() B.onStart() B.onResume() A.onStop()->B.onPause() A.onStart() A.onResume() B.onStop() B.onDestroy()
+    
+    屏保：onPause() onConfigurationChanged()
+    屏保取消：onResume() onConfigurationChanged()
+    
+    横屏－>竖屏：onConfigurationChanged()
+    竖屏－>横屏：onConfigurationChanged()
+模拟器，activity配置有android:configChanges="orientation"：
+    屏保：onPause() onConfigurationChanged()
+    屏保取消：onResume() onConfigurationChanged()
+    
+    横屏－>竖屏：onConfigurationChanged()
+    竖屏－>横屏：onPause() onStop() onDestroy() onCreate() onStart() onResume()
+
+Activity B send data back to Activity A
+1.activity result
+    A:
+    privite Intent intent = new Intent(this, B.class);
+    int requestCode_XX_ACTIVITY = 0;
+    startActivityForResult(intent, requestCode_XX_ACTIVITY);
+    B:
+    int resultCode_OK = 0;
+	Intent intent = new Intent();
+	intent.putExtra("password", getPassword());
+    setResult(resultCode_OK, intent);
+    A:
+    onActivityResult (int requestCode, int resultCode, Intent intent)
+2.broadcast
+    2.1 registerReceiver in Activity:
+        B:
+        public static final String GOTO_OUTLINE = "zl.android.ebook.GOTO_OUTLINE";
+	    Intent intent = new Intent(GOTO_OUTLINE);
+	    //intent.putExtra("gotoBookmark", text);
+	    intent.putExtra("outlineIndex", position);
+	    sendBroadcast(intent);
+        A:
+        manifest.xml setting receiver.
+	        <receiver android:name=".BookViewActivity$BookViewReceiver"></receiver>
+	        
+	    private BroadcastReceiver bookViewReceiver = new BookViewReceiver();
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(B.GOTO_OUTLINE);
+	    A.this.registerReceiver(bookViewReceiver, filter);
+	
+	    public  class BookViewReceiver extends BroadcastReceiver {
+	    @Override
+	    public void onReceive(Context context, Intent intent) {
+	    switch(intent.getAction())
+	    //...}
+	    }
+	
+	2.2 AndroidManifest.xml setting receiver and broadcast intent filter.
+        
+        <receiver android:name=".BookScanReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+            <action android:name="zl.android.ebook.action.SCAN_BOOK"/>
+            <data android:scheme="file" />
+        </intent-filter>
+        </receiver>
+        
+        public class BookScanReceiver extends BroadcastReceiver {
+	    @Override
+	    public void onReceive(Context context, Intent intent) {
+	        //intent.getAction();
+	    }
+	    }
+	    
+后台执行任务：service
+        <service android:name=".BookScanService"
+        		 android:enabled="true"
+        		 android:exported="true">//means other app could call this service.
+        </service>
+        
+    context.startService(
+                    new Intent(context, BookScanService.class));
+                    
+            service: onCreate() onStart() onStartCommand() onBind() stopSelf() onDestroy();
+            
+            context.stopService();
+        
+		
+            Context.bindService();->service onBind();,onStartCommand() not run.
+            
+            IBinder write in aidl.
+            
+数据管理： provider
+
+
+
+
+svn:
+svn delete libraries
+svn ci
+
+想要恢复libraries
+svn log -v ｜grep -C 4 libraries
+svn update -r 13969 libraries
+这种方法只是恢复到本地。在服务器端当前版本libraries还是没有。
+cd libraries
+find ./ -name .svn | xarg rm -rf
+删除.svn 信息//else add libraries 提示libraries已经纳入版本库
+svn add libraries
+svn ci -m "add libraries back"
+
+
+android library project.
+建立自己的android libraries.
+将libraries 工程属性设置为is libraries
+里面的资源文件名，加上包名前缀，避免与主工程中的资源文件名相同。
+
+在主工程中，将主工程的属性中添加libraries。如果library工程中assets中有数据，就将数据拷过来。
+
+
+            

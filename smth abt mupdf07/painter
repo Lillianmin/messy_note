@@ -1,0 +1,7 @@
+QPixmap pixmap("yourImageFile");
+
+QPainter p(pixmap);
+
+p.drawXXXX();
+
+pixmap.save("yourIamgeFile", "png");

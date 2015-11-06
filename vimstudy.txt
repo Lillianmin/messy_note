@@ -1,0 +1,59 @@
+{
+	select text between {}.
+}
+
+[
+	select text between [].
+]
+
+Enter visual mode. and press i or a plus {, [ ", ' ( and so on.
+
+vi{ 选中｛｝中间的内容,不包括｛｝
+va{ 选中｛｝中间内容，包括{}
+vi( 选中（）中间内容
+vi< 选中<>中间内容
+vi[ 选中[]中间内容
+vit 选中<tag></tag>中间的内容
+vi" 选中""中间内容
+vi' 选中''中间的内容
+vis 选中一个句子
+vib 选中一个block
+viw选中一个单词
+vip 选中一个段落 
+[
+duplicate
+duplicate
+]
+
+以下命令可以对标点内的内容进行操作。
+ci'、ci"、ci(、ci[、ci{、ci< - 分别更改这些配对标点符号中的文本内容
+di'、di"、di(或dib、di[、di{或diB、di< - 分别删除这些配对标点符号中的文本内容
+yi'、yi"、yi(、yi[、yi{、yi< - 分别复制这些配对标点符号中的文本内容
+vi'、vi"、vi(、vi[、vi{、vi< - 分别选中这些配对标点符号中的文本内容
+
+insert mode
+Ctrl+p or Ctrl+n //补齐
+
+version mode
+u //undo
+Ctrl+r //redo
+Ctrl+v //select columns
+^ //go to begin of row
+I //insert
+$ //go to end of row
+A //
+Shift+v //select rows
+
+"renmen"
+command mode
+:bn //next file
+:bp //prev file
+
+command mode
+command mode
+:bn //next file
+command mode
+love
+:bn //next file
+:bn //next file
+

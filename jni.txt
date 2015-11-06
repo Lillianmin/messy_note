@@ -1,0 +1,44 @@
+1.在JNI中打印调试信息至LOGCAT
+a.在JNI的Android.mk中加入
+LOCAL_LDLIBS +=  -L$(SYSROOT)/usr/lib -llog
+b.在需要打印调试信息的C或C++文件中加入
+#include <android/log.h>
+c.使用类似如下语句打印输出至LOGCAT
+__android_log_print(ANDROID_LOG_INFO, "JNI_DBG", "loadBook, book: %s", bookBuf);
+
+2.关于中文乱码的问题
+Java String 是UTF－16。
+Android中使用UTF－8。
+Java传递String至JNI中文乱码解决方法
+a.不传String, 用String.getBytes();获得byte[]对象
+loadBook(book.getBookPath().getBytes(), password);
+b.JNI中对应byte[]的是jbyteArray
+JNIEXPORT jint JNICALL Java_zl_android_ebook_BookRender_loadBook
+(JNIEnv *env, jobject, jbyteArray book, jstring passwd)
+c.jbyteArray转换为char[]
+char bookBuf[BUF_SIZE]；
+int bookLen = env->GetArrayLength(book);
+env->GetByteArrayRegion(book, 0, bookLen, (jbyte*)bookBuf);
+bookBuf[bookLen]=0;//必须。否则出错。
+PS:
+这样每需要在Java与JNI间传递中文时需要每处在Java、JNI文件进行修改，
+考虑在JNI程序中写jstringToString、stringToJString函数。
+
+3.在JNI中调用Java方法：
+jmethodID GetMethodID(JNIEnv *env, jclass clazz,
+const char *name, const char *sig);
+第一参数是Java 类对象。
+第二个参数是参数（或方法名）。
+javap -c 。
+jclass FindClass(JNIEnv *env, const char *name);
+name: a fully-qualified class name (that is, a package name, delimited by “/”, followed by the class name). If the name begins with “[“ (the array signature character), it returns an array class. The string is encoded in modified UTF-8.
+第三个参数是该参数（或方法）的签名。第三个参数由以下方法得到：
+进入类所在目录，javac编译得到class文件，javap －s 类名
+获得内部类的签名 javap -s OutClassName.InnerClassName ($ will not work.)
+NativeType Call<type>Method(JNIEnv *env, jobject obj,
+jmethodID methodID, ...); 
+
+CallObjectMethod
+
+
+
