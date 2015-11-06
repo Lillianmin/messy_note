@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="zh"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Android ndk编译第三方开源包 - ZLWiki</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.2">
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit">
+<link rel="edit" title="编辑" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit">
+<link rel="shortcut icon" href="http://192.168.4.253/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://192.168.4.253/wiki/opensearch_desc.php" title="ZLWiki (zh)">
+<link rel="EditURI" type="application/rsd+xml" href="http://192.168.4.253/wiki/api.php?action=rsd">
+<link rel="alternate" hreflang="zh" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh">
+<link rel="alternate" hreflang="zh-hans" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hans">
+<link rel="alternate" hreflang="zh-hant" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hant">
+<link rel="alternate" hreflang="zh-cn" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-cn">
+<link rel="alternate" hreflang="zh-hk" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hk">
+<link rel="alternate" hreflang="zh-mo" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-mo">
+<link rel="alternate" hreflang="zh-my" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-my">
+<link rel="alternate" hreflang="zh-sg" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-sg">
+<link rel="alternate" hreflang="zh-tw" href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-tw">
+<link rel="alternate" type="application/atom+xml" title="ZLWiki的Atom" href="http://192.168.4.253/wiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
+<link rel="stylesheet" href="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load.css">
+<style>.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:035df1799300b77a14f9b706885a9dfa */</style>
+
+<script src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load_004.php"></script><script src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load_005.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Android_ndk编译第三方开源包","wgTitle":"Android ndk编译第三方开源包","wgCurRevisionId":1416,"wgArticleId":338,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Android_ndk编译第三方开源包","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: zl_wiki:resourceloader:filter:minify-js:7:4cdc51ecb01bfab009aeca49ed228f2c */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load.php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Android_ndk编译第三方开源包 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading"><span dir="auto">Android ndk编译第三方开源包</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">来自ZLWiki</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					跳转至：					<a href="#mw-head">导航</a>、					<a href="#p-search">搜索</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="zh"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>目录</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">隐藏</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.A5.E7.BC.96.E8.AF.91libcurl.E4.B8.BA.E4.BE.8B.2C.E4.BD.BF.E7.94.A8Android_ndk.E7.BC.96.E8.AF.91arm.E7.9A.84.E5.BA.93"><span class="tocnumber">1</span> <span class="toctext">以编译libcurl为例,使用Android ndk编译arm的库</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E8.AE.BE.E7.BD.AE.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F.EF.BC.8C.E4.BD.BF.E7.94.A8ndk.E7.9A.84prebuilt.E5.B7.A5.E5.85.B7.E9.93.BE"><span class="tocnumber">1.1</span> <span class="toctext">设置环境变量，使用ndk的prebuilt工具链</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E7.BC.96.E5.86.99.E7.BC.96.E8.AF.91.E8.84.9A.E6.9C.ACbuild_android.sh"><span class="tocnumber">1.2</span> <span class="toctext">编写编译脚本build_android.sh</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E7.BC.96.E8.AF.91.E4.B8.AD.E9.85.8D.E7.BD.AE.E5.87.BA.E7.8E.B0.E9.94.99.E8.AF.AF"><span class="tocnumber">1.3</span> <span class="toctext">编译中配置出现错误</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#NDK.E4.B8.8B.E6.8F.90.E5.8F.96.E5.87.BA.E7.8B.AC.E7.AB.8B.E7.9A.84.E5.B7.A5.E5.85.B7.E9.93.BE"><span class="tocnumber">1.4</span> <span class="toctext">NDK下提取出独立的工具链</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E9.87.8D.E6.96.B0.E8.AE.BE.E7.BD.AE.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F"><span class="tocnumber">1.5</span> <span class="toctext">重新设置环境变量</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E4.BB.A5.E7.B1.BB.E4.BC.BC.E6.96.B9.E6.B3.95.E7.BC.96.E8.AF.91_sqlite3.E6.97.B6.E9.97.AE.E9.A2.98"><span class="tocnumber">1.6</span> <span class="toctext">以类似方法编译 sqlite3时问题</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#configure.E4.B8.8D.E8.AF.86.E5.88.ABarm-linux-androideabi"><span class="tocnumber">1.6.1</span> <span class="toctext">configure不识别arm-linux-androideabi</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#libsqlite3.so:_error:_undefined_reference_to_.27fdatasync.27"><span class="tocnumber">1.6.2</span> <span class="toctext">libsqlite3.so: error: undefined reference to 'fdatasync'</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h1><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=1" title="编辑章节：以编译libcurl为例,使用Android ndk编译arm的库">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.A5.E7.BC.96.E8.AF.91libcurl.E4.B8.BA.E4.BE.8B.2C.E4.BD.BF.E7.94.A8Android_ndk.E7.BC.96.E8.AF.91arm.E7.9A.84.E5.BA.93"> 以编译libcurl为例,使用Android ndk编译arm的库 </span></h1>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=2" title="编辑章节：设置环境变量，使用ndk的prebuilt工具链">编辑</a>]</span> <span class="mw-headline" id=".E8.AE.BE.E7.BD.AE.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F.EF.BC.8C.E4.BD.BF.E7.94.A8ndk.E7.9A.84prebuilt.E5.B7.A5.E5.85.B7.E9.93.BE"> 设置环境变量，使用ndk的prebuilt工具链 </span></h2>
+<pre>export NDK_HOME=/media/mll/ylz_ccache/mll/dev/android-ndk
+export PATH=$NDK_HOME:$PATH
+export NDK_TOOLCHAIN_HOME=$NDK_HOME/toolchains
+export ARMEABI_BIN=$NDK_TOOLCHAIN_HOME/arm-linux-androideabi-4.6/prebuilt/linux-x86_64/bin
+export ARMEABI_LIB=$NDK_TOOLCHAIN_HOME/arm-linux-androideabi-4.6/prebuilt/linux-x86_64/lib:$LD_LIBRARY_PATH
+export MIPSEL_BIN=$NDK_TOOLCHAIN_HOME/mipsel-linux-android-4.6/prebuilt/linux-x86_64/bin
+export MIPSEL_LIB=$NDK_TOOLCHAIN_HOME/mipsel-linux-android-4.6/prebuilt/linux-x86_64/lib:$LD_LIBRARY_PATH
+export X86_BIN=$NDK_TOOLCHAIN_HOME/x86-4.6/prebuilt/linux-x86_64/bin
+export X86_LIB=$NDK_TOOLCHAIN_HOME/x86-4.6/prebuilt/linux-x86_64/lib:$LD_LIBRARY_PATH
+export PATH=$ARMEABI_BIN:$MIPSEL_BIN:$X86_BIN:$PATH
+</pre>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=3" title="编辑章节：编写编译脚本build android.sh">编辑</a>]</span> <span class="mw-headline" id=".E7.BC.96.E5.86.99.E7.BC.96.E8.AF.91.E8.84.9A.E6.9C.ACbuild_android.sh"> 编写编译脚本build_android.sh </span></h2>
+<pre>make distclean
+export SYSROOT=$NDK_TOOLCHAIN_HOME/arm-linux-androideabi-4.6/sysroot
+export CPPFLAGS="-I$SYSROOT/usr/include"
+export LDFLAGS="-L$SYSROOT/usr/lib"
+./configure --host=arm-linux-androideabi --prefix=$PWD/libs/armeabi
+make
+make install
+</pre>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=4" title="编辑章节：编译中配置出现错误">编辑</a>]</span> <span class="mw-headline" id=".E7.BC.96.E8.AF.91.E4.B8.AD.E9.85.8D.E7.BD.AE.E5.87.BA.E7.8E.B0.E9.94.99.E8.AF.AF"> 编译中配置出现错误 </span></h2>
+<pre>checking for arm-linux-androideabi-gcc... arm-linux-androideabi-gcc  --sysroot=/media/mll/ylz_ccache/mll/dev/android-ndk/platforms/android-19/arch-x86
+checking whether the C compiler works... no
+configure: error: in `/media/mll/debian_data/notebook/thirdpart/curl':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+</pre>
+<p>查看config.log,里面的提示有,如下内容。
+</p>
+<pre>configure:4186: arm-linux-androideabi-gcc  --sysroot=/media/mll/ylz_ccache/mll/dev/android-ndk/platforms/android-19/arch-x86 -V &gt;&amp;5
+arm-linux-androideabi-gcc: error: unrecognized option '-V'
+arm-linux-androideabi-gcc: fatal error: no input files
+compilation terminated.
+configure:4197: $? = 1
+configure:4186: arm-linux-androideabi-gcc  --sysroot=/media/mll/ylz_ccache/mll/dev/android-ndk/platforms/android-19/arch-x86 -qversion &gt;&amp;5
+arm-linux-androideabi-gcc: error: unrecognized option '-qversion'
+arm-linux-androideabi-gcc: fatal error: no input files
+compilation terminated.
+</pre>
+<p>查找资料,不能直接使用$NDK_HOME/toolchains下的工具链，需要在NDK下提取出独立的工具链。
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=5" title="编辑章节：NDK下提取出独立的工具链">编辑</a>]</span> <span class="mw-headline" id="NDK.E4.B8.8B.E6.8F.90.E5.8F.96.E5.87.BA.E7.8B.AC.E7.AB.8B.E7.9A.84.E5.B7.A5.E5.85.B7.E9.93.BE"> NDK下提取出独立的工具链 </span></h2>
+<pre>cd $NDK_HOME/build/tools
+./make-standalone-toolchain.sh --ndk-dir=$NDK_HOME --system=linux-x86_64 --toolchain=arm-linux-androideabi-4.6
+./make-standalone-toolchain.sh --ndk-dir=$NDK_HOME --system=linux-x86_64 --toolchain=x86-4.6
+./make-standalone-toolchain.sh --ndk-dir=$NDK_HOME --system=linux-x86_64 --toolchain=mipsel-linux-android-4.6
+</pre>
+<p>在/tmp/ndk-mll/下生成了arm-linux-androideabi-4.6.tar.bz2  mipsel-linux-android-4.6.tar.bz2  x86-4.6.tar.bz2
+将上面三个文件解压放至自己的独立工具文件夹下，$NDK_HOEM/standalone-toolchains
+</p>
+<pre>mkdir $NDK_HOME/standalone-toolchains
+mv /tmp/ndk-mll/*.tar.bz2 ./
+tar jxvf arm-linux-androideabi-4.6.tar.bz2
+tar jxvf mipsel-linux-android-4.6.tar.bz2
+tar jxvf x86-4.6.tar.bz2
+</pre>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=6" title="编辑章节：重新设置环境变量">编辑</a>]</span> <span class="mw-headline" id=".E9.87.8D.E6.96.B0.E8.AE.BE.E7.BD.AE.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F"> 重新设置环境变量 </span></h2>
+<pre>export NDK_HOME=/media/mll/ylz_ccache/mll/dev/android-ndk
+export PATH=$NDK_HOME:$PATH
+export NDK_TOOLCHAIN_HOME=$NDK_HOME/standalone-toolchains
+export ARMEABI_BIN=$NDK_TOOLCHAIN_HOME/arm-linux-androideabi-4.6/bin
+export ARMEABI_LIB=$NDK_TOOLCHAIN_HOME/arm-linux-androideabi-4.6/lib:$LD_LIBRARY_PATH
+export MIPSEL_BIN=$NDK_TOOLCHAIN_HOME/mipsel-linux-android-4.6/bin
+export MIPSEL_LIB=$NDK_TOOLCHAIN_HOME/mipsel-linux-android-4.6/lib:$LD_LIBRARY_PATH
+export X86_BIN=$NDK_TOOLCHAIN_HOME/x86-4.6/bin
+export X86_LIB=$NDK_TOOLCHAIN_HOME/x86-4.6/lib:$LD_LIBRARY_PATH
+export PATH=$ARMEABI_BIN:$MIPSEL_BIN:$X86_BIN:$PATH
+</pre>
+<p>重新执行build_android.sh，至此编译libcurl的arm版本成功
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=7" title="编辑章节：以类似方法编译 sqlite3时问题">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.A5.E7.B1.BB.E4.BC.BC.E6.96.B9.E6.B3.95.E7.BC.96.E8.AF.91_sqlite3.E6.97.B6.E9.97.AE.E9.A2.98"> 以类似方法编译 sqlite3时问题 </span></h2>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=8" title="编辑章节：configure不识别arm-linux-androideabi">编辑</a>]</span> <span class="mw-headline" id="configure.E4.B8.8D.E8.AF.86.E5.88.ABarm-linux-androideabi"> configure不识别arm-linux-androideabi </span></h3>
+<pre>checking build system type... Invalid configuration `arm-linux-androideabi': system `androideabi' not recognized
+configure: error: /bin/bash ./config.sub arm-linux-androideabi failed
+</pre>
+<p>查询资料，<a rel="nofollow" class="external text" href="http://stackoverflow.com/questions/4594736/configure-does-not-recognize-androideabi">configure-does-not-recognize-androideabi</a>
+是因为sqlite3版本比较老，是2009-12-07版本，而config.sub与config.guess配置文件需要是2010-05-20以
+后的版本才支持android，所以更新这两个文件，将系统的config.sub config.guess拷贝至此。
+</p>
+<pre>sudo cp /usr/share/misc/config.{sub,guess} .
+sudo chown mll:mll config.sub config.guess
+</pre>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;section=9" title="编辑章节：libsqlite3.so: error: undefined reference to 'fdatasync'">编辑</a>]</span> <span class="mw-headline" id="libsqlite3.so:_error:_undefined_reference_to_.27fdatasync.27"> libsqlite3.so: error: undefined reference to 'fdatasync' </span></h3>
+<p>说是要sqlite3库的一个BUG,需要更新版本才能解决。下载 sqlite-autoconf-3081002.tar.gz版本，编译无问题
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 220/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key zl_wiki:pcache:idhash:338-0!*!*!!zh!*!zh!* and timestamp 20151106030646 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				来自“<a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;oldid=1416">http://192.168.4.253/wiki/index.php?title=Android_ndk编译第三方开源包&amp;oldid=1416</a>”				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks catlinks-allhidden"></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>个人工具</h5>
+	<ul>
+		<li id="pt-createaccount"><a href="http://192.168.4.253/wiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Android+ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;type=signup">创建账户</a></li>
+		<li id="pt-login"><a href="http://192.168.4.253/wiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Android+ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85" title="我们鼓励你登录，不过这不是强制的 [alt-shift-o]" accesskey="o">登录</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>名字空间</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://192.168.4.253/wiki/index.php/Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85" title="查看内容页面 [alt-shift-c]" accesskey="c">页面</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="http://192.168.4.253/wiki/index.php?title=Talk:Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit&amp;redlink=1" title="有关内容页面的讨论 [alt-shift-t]" accesskey="t">讨论</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu">
+	<h4>
+						不转换																												</h4>
+	<h5><span>变换</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+							<li id="ca-varlang-0" class="selected"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh" hreflang="zh" lang="zh">不转换</a></li>
+							<li id="ca-varlang-1"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hans" hreflang="zh-hans" lang="zh-hans">简体</a></li>
+							<li id="ca-varlang-2"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hant" hreflang="zh-hant" lang="zh-hant">繁體</a></li>
+							<li id="ca-varlang-3"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-cn" hreflang="zh-cn" lang="zh-cn">大陆简体</a></li>
+							<li id="ca-varlang-4"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-hk" hreflang="zh-hk" lang="zh-hk">香港繁體</a></li>
+							<li id="ca-varlang-5"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-mo" hreflang="zh-mo" lang="zh-mo">澳門繁體</a></li>
+							<li id="ca-varlang-6"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-my" hreflang="zh-my" lang="zh-my">大马简体</a></li>
+							<li id="ca-varlang-7"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-sg" hreflang="zh-sg" lang="zh-sg">新加坡简体</a></li>
+							<li id="ca-varlang-8"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;variant=zh-tw" hreflang="zh-tw" lang="zh-tw">台灣正體</a></li>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>查看</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://192.168.4.253/wiki/index.php/Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85">阅读</a></span></li>
+					<li id="ca-edit"><span><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=edit" title="你可以编辑本页面。请在保存前使用预览按钮。 [alt-shift-e]" accesskey="e">编辑</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;action=history" title="本页面的历史版本 [alt-shift-h]" accesskey="h">查看历史</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>操作</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">搜索</label></h5>
+	<form action="/wiki/index.php" id="searchform">
+				<div>
+			<input placeholder="搜索" autocomplete="off" name="search" title="在ZLWiki中搜索 [alt-shift-f]" accesskey="f" id="searchInput" type="search">			<input name="go" value="提交" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" type="submit">			<input name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" type="submit">					<input name="title" value="Special:搜索" type="hidden">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/wiki/extensions/logo_w135_h135.jpg);" href="http://192.168.4.253/wiki/index.php/%E9%A6%96%E9%A1%B5" title="访问首页"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>导航</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://192.168.4.253/wiki/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [alt-shift-z]" accesskey="z">首页</a></li>
+			<li id="n-portal"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E7%A4%BE%E5%8C%BA%E4%B8%93%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区专页</a></li>
+			<li id="n-currentevents"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E6%96%B0%E9%97%BB%E5%8A%A8%E6%80%81" title="查看当前事件的背景信息">新闻动态</a></li>
+			<li id="n-recentchanges"><a href="http://192.168.4.253/wiki/index.php/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [alt-shift-r]" accesskey="r">最近更改</a></li>
+			<li id="n-randompage"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面 [alt-shift-x]" accesskey="x">随机页面</a></li>
+			<li id="n-help"><a href="http://192.168.4.253/wiki/index.php/Help:%E7%9B%AE%E5%BD%95" title="查找帮助的地方">帮助</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>工具箱</h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85" title="所有链入本页的wiki页面列表 [alt-shift-j]" accesskey="j">链入页面</a></li>
+			<li id="t-recentchangeslinked"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85" title="本页链入的页面的最近更改 [alt-shift-k]" accesskey="k">相关更改</a></li>
+			<li id="t-specialpages"><a href="http://192.168.4.253/wiki/index.php/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表 [alt-shift-q]" accesskey="q">特殊页面</a></li>
+			<li id="t-print"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;printable=yes" rel="alternate" title="本页面的可打印版本 [alt-shift-p]" accesskey="p">打印版本</a></li>
+			<li id="t-permalink"><a href="http://192.168.4.253/wiki/index.php?title=Android_ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85&amp;oldid=1416" title="本页面该版本的永久链接">永久链接</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> 本页面最后修改于2015年8月27日 (星期四) 17:35。</li>
+											<li id="footer-info-viewcount">此页面已被浏览过7次。</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="ZLWiki:隐私权政策">隐私权政策</a></li>
+											<li id="footer-places-about"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E5%85%B3%E4%BA%8E" title="ZLWiki:关于">关于ZLWiki</a></li>
+											<li id="footer-places-disclaimer"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="ZLWiki:免责声明">免责声明</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load_002.php"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script><script type="text/javascript" src="Android%20ndk%E7%BC%96%E8%AF%91%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%8C%85%20-%20ZLWiki_files/load_003.php"></script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<!-- Served in 0.149 secs. -->
+	
+
+<div class="suggestions" style="display: none; font-size: 14.6667px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
