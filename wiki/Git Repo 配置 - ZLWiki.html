@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="zh"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Git Repo 配置 - ZLWiki</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.2">
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit">
+<link rel="edit" title="编辑" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit">
+<link rel="shortcut icon" href="http://192.168.4.253/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://192.168.4.253/wiki/opensearch_desc.php" title="ZLWiki (zh)">
+<link rel="EditURI" type="application/rsd+xml" href="http://192.168.4.253/wiki/api.php?action=rsd">
+<link rel="alternate" hreflang="zh" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh">
+<link rel="alternate" hreflang="zh-hans" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hans">
+<link rel="alternate" hreflang="zh-hant" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hant">
+<link rel="alternate" hreflang="zh-cn" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-cn">
+<link rel="alternate" hreflang="zh-hk" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hk">
+<link rel="alternate" hreflang="zh-mo" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-mo">
+<link rel="alternate" hreflang="zh-my" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-my">
+<link rel="alternate" hreflang="zh-sg" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-sg">
+<link rel="alternate" hreflang="zh-tw" href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-tw">
+<link rel="alternate" type="application/atom+xml" title="ZLWiki的Atom" href="http://192.168.4.253/wiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
+<link rel="stylesheet" href="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load.css">
+<style>.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: zl_wiki:resourceloader:filter:minify-css:7:035df1799300b77a14f9b706885a9dfa */</style>
+
+<script src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load_004.php"></script><script src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load_005.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Git_Repo_配置","wgTitle":"Git Repo 配置","wgCurRevisionId":968,"wgArticleId":2,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Git_Repo_配置","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: zl_wiki:resourceloader:filter:minify-js:7:4cdc51ecb01bfab009aeca49ed228f2c */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load.php"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-xml {line-height: normal;}
+.source-xml li, .source-xml pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for xml
+ * CSS class: source-xml, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.xml.source-xml .de1, .xml.source-xml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.xml.source-xml  {font-family:monospace;}
+.xml.source-xml .imp {font-weight: bold; color: red;}
+.xml.source-xml li, .xml.source-xml .li1 {font-weight: normal; vertical-align:top;}
+.xml.source-xml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.xml.source-xml .li2 {font-weight: bold; vertical-align:top;}
+.xml.source-xml .es0 {color: #000099; font-weight: bold;}
+.xml.source-xml .br0 {color: #66cc66;}
+.xml.source-xml .sy0 {color: #66cc66;}
+.xml.source-xml .st0 {color: #ff0000;}
+.xml.source-xml .nu0 {color: #cc66cc;}
+.xml.source-xml .sc-1 {color: #808080; font-style: italic;}
+.xml.source-xml .sc0 {color: #00bbdd;}
+.xml.source-xml .sc1 {color: #ddbb00;}
+.xml.source-xml .sc2 {color: #339933;}
+.xml.source-xml .sc3 {color: #009900;}
+.xml.source-xml .re0 {color: #000066;}
+.xml.source-xml .re1 {color: #000000; font-weight: bold;}
+.xml.source-xml .re2 {color: #000000; font-weight: bold;}
+.xml.source-xml .ln-xtra, .xml.source-xml li.ln-xtra, .xml.source-xml div.ln-xtra {background-color: #ffc;}
+.xml.source-xml span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Git_Repo_配置 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading"><span dir="auto">Git Repo 配置</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">来自ZLWiki</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					跳转至：					<a href="#mw-head">导航</a>、					<a href="#p-search">搜索</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="zh"><p><br>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>目录</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">隐藏</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.88.9B.E5.BB.BA.E5.9F.BA.E7.A1.80repo_.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.92.8C.E5.AE.A2.E6.88.B7.E7.AB.AF"><span class="tocnumber">1</span> <span class="toctext">创建基础repo 服务器和客户端</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#repo_.E6.9C.8D.E5.8A.A1.E5.99.A8"><span class="tocnumber">1.1</span> <span class="toctext">repo 服务器</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#repo_.E5.AE.A2.E6.88.B7.E7.AB.AF"><span class="tocnumber">1.2</span> <span class="toctext">repo 客户端</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#.E4.BD.BF.E7.94.A8.E5.88.86.E6.94.AF.E7.AE.A1.E7.90.86.E4.B8.8D.E5.90.8C.E9.A1.B9.E7.9B.AE"><span class="tocnumber">2</span> <span class="toctext">使用分支管理不同项目</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#repo.E7.9A.84_master_.E5.88.86.E6.94.AF"><span class="tocnumber">2.1</span> <span class="toctext">repo的 master 分支</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#repo.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.BC.96.E8.BE.91_default.xml"><span class="tocnumber">2.1.1</span> <span class="toctext">repo服务器编辑 default.xml</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#repo_.E5.AE.A2.E6.88.B7.E7.AB.AF_2"><span class="tocnumber">2.1.2</span> <span class="toctext">repo 客户端</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.88.9B.E5.BB.BA_ebookbag_.E5.88.86.E6.94.AF"><span class="tocnumber">2.2</span> <span class="toctext">创建 ebookbag 分支</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.88.9B.E5.BB.BA_ebookbag_.E5.88.86.E6.94.AF"><span class="tocnumber">2.2.1</span> <span class="toctext">服务器创建 ebookbag 分支</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#repo_.E5.AE.A2.E6.88.B7.E7.AB.AF_3"><span class="tocnumber">2.2.2</span> <span class="toctext">repo 客户端</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#.E4.BD.BF.E7.94.A8.E4.B8.8D.E5.90.8C.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E4.B8.8D.E5.90.8C.E9.A1.B9.E7.9B.AE"><span class="tocnumber">3</span> <span class="toctext">使用不同配置文件管理不同项目</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#repo_.E6.9C.8D.E5.8A.A1.E5.99.A8_2"><span class="tocnumber">3.1</span> <span class="toctext">repo 服务器</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#repo_.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.B8.8B.E8.BD.BDebookbag.E9.A1.B9.E7.9B.AE"><span class="tocnumber">3.2</span> <span class="toctext">repo 客户端下载ebookbag项目</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.BD.BF.E7.94.A8"><span class="tocnumber">4</span> <span class="toctext">客户端使用</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#.E8.8E.B7.E5.8F.96repo"><span class="tocnumber">4.1</span> <span class="toctext">获取repo</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#.E8.8E.B7.E5.8F.96.E6.89.80.E6.9C.89.E5.B7.A5.E7.A8.8B"><span class="tocnumber">4.1.1</span> <span class="toctext">获取所有工程</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#.E8.8E.B7.E5.8F.96_ebookbag_.E9.A1.B9.E7.9B.AE.E5.B7.A5.E7.A8.8B"><span class="tocnumber">4.1.2</span> <span class="toctext">获取 ebookbag 项目工程</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#.E5.90.8C.E6.AD.A5.E6.89.80.E6.9C.89.E5.B7.A5.E7.A8.8B"><span class="tocnumber">4.1.3</span> <span class="toctext">同步所有工程</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#.E4.BD.BF.E7.94.A8_master_.E5.88.86.E6.94.AF"><span class="tocnumber">4.2</span> <span class="toctext">使用 master 分支</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E6.96.B0.E5.BB.BA.E5.B7.A5.E7.A8.8B"><span class="tocnumber">4.3</span> <span class="toctext">新建工程</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.E5.BE.80.E8.BF.9C.E7.A8.8Brepo.E6.B7.BB.E5.8A.A0.E5.B7.A5.E7.A8.8B.EF.BC.9A"><span class="tocnumber">4.4</span> <span class="toctext">往远程repo添加工程：</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#.E6.B7.BB.E5.8A.A0.E7.9B.AE.E5.BD.95"><span class="tocnumber">4.4.1</span> <span class="toctext">添加目录</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h1><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=1" title="编辑章节：创建基础repo 服务器和客户端">编辑</a>]</span> <span class="mw-headline" id=".E5.88.9B.E5.BB.BA.E5.9F.BA.E7.A1.80repo_.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.92.8C.E5.AE.A2.E6.88.B7.E7.AB.AF"> 创建基础repo 服务器和客户端 </span></h1>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=2" title="编辑章节：repo 服务器">编辑</a>]</span> <span class="mw-headline" id="repo_.E6.9C.8D.E5.8A.A1.E5.99.A8">  repo 服务器 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="re1">$SERVER</span>
+<span class="kw2">mkdir</span> manifests
+<span class="kw3">cd</span> manifests
+<span class="kw2">git init</span>
+<span class="co0"># create default.xml</span></pre></div></div>
+<p>创建简单 default.xml 文档
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">"1.0"</span> <span class="re0">encoding</span>=<span class="st0">"UTF-8"</span><span class="re2">?&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;remote</span> <span class="re0">name</span>=<span class="st0">"init"</span></span>
+<span class="sc3">		<span class="re0">fetch</span>=<span class="st0">"."</span> <span class="re2">/&gt;</span></span>
+	<span class="sc3"><span class="re1">&lt;default</span> <span class="re0">revision</span>=<span class="st0">"master"</span></span>
+<span class="sc3">		<span class="re0">remote</span>=<span class="st0">"init"</span> <span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">mv</span> .git ..<span class="sy0">/</span>manifests.git
+<span class="kw2">ln</span> <span class="re5">-s</span> ..<span class="sy0">/</span>manifests.git .git
+<span class="kw2">git add</span> <span class="re5">-A</span>  <span class="co0">#current dir is manifests. use to commit default.xml</span>
+<span class="kw2">git commit</span> <span class="re5">-a</span> <span class="re5">-m</span> <span class="st0">"repo init"</span></pre></div></div>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=3" title="编辑章节：repo 客户端">编辑</a>]</span> <span class="mw-headline" id="repo_.E5.AE.A2.E6.88.B7.E7.AB.AF"> repo 客户端 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">mkdir</span> client
+<span class="kw3">cd</span> client
+repo init <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests.git
+or 
+repo init <span class="re5">--repo-url</span>=<span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>git-repo.git <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git
+repo <span class="kw2">sync</span></pre></div></div>
+<p>到目前为止，已经创建了一个最基本的repo服务器和客户端了。接下来进入我们自己的项目repo管理。
+repo 管理项目可以通过服务器的分支和服务器上不同的配置文件两种途径来设置。
+</p>
+<h1><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=4" title="编辑章节：使用分支管理不同项目">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E5.88.86.E6.94.AF.E7.AE.A1.E7.90.86.E4.B8.8D.E5.90.8C.E9.A1.B9.E7.9B.AE"> 使用分支管理不同项目 </span></h1>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=5" title="编辑章节：repo的 master 分支">编辑</a>]</span> <span class="mw-headline" id="repo.E7.9A.84_master_.E5.88.86.E6.94.AF"> repo的 master 分支 </span></h2>
+<p>master 分支管理所有公司工程。
+</p>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=6" title="编辑章节：repo服务器编辑 default.xml">编辑</a>]</span> <span class="mw-headline" id="repo.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.BC.96.E8.BE.91_default.xml"> repo服务器编辑 default.xml </span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests<span class="sy0">/</span>
+<span class="kw2">git checkout</span> master</pre></div></div>
+<p><br>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">"1.0"</span> <span class="re0">encoding</span>=<span class="st0">"UTF-8"</span><span class="re2">?&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;remote</span> <span class="re0">name</span>=<span class="st0">"android-apps"</span> <span class="re0">fetch</span>=<span class="st0">"./"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;default</span> <span class="re0">revision</span>=<span class="st0">"master"</span> <span class="re0">remote</span>=<span class="st0">"android-apps"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/network"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/network"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re2">/&gt;</span></span>
+&nbsp;
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"adobedrm"</span> <span class="re0">path</span>=<span class="st0">"adobedrm"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"adobedrmtest"</span> <span class="re0">path</span>=<span class="st0">"adobedrmtest"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"caraudioremote"</span> <span class="re0">path</span>=<span class="st0">"caraudioremote"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"cartoonpinyin"</span> <span class="re0">path</span>=<span class="st0">"cartoonpinyin"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"dictionary"</span> <span class="re0">path</span>=<span class="st0">"dictionary"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"gif"</span> <span class="re0">path</span>=<span class="st0">"gif"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"hanzi"</span> <span class="re0">path</span>=<span class="st0">"hanzi"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"kdfilebrowser"</span> <span class="re0">path</span>=<span class="st0">"kdfilebrowser"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"libraries"</span> <span class="re0">path</span>=<span class="st0">"libraries"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"malatasync"</span> <span class="re0">path</span>=<span class="st0">"malatasync"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"obookdict"</span> <span class="re0">path</span>=<span class="st0">"obookdict"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"obookreader"</span> <span class="re0">path</span>=<span class="st0">"obookreader"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"pointread"</span> <span class="re0">path</span>=<span class="st0">"pointread"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"sanzijing"</span> <span class="re0">path</span>=<span class="st0">"sanzijing"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"zlslrcactivity"</span> <span class="re0">path</span>=<span class="st0">"zlslrcactivity"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"zlstestactivity"</span> <span class="re0">path</span>=<span class="st0">"zlstestactivity"</span> <span class="re2">/&gt;</span></span>
+&nbsp;
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></div></div>
+<p>提交 default.xml。
+</p>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=7" title="编辑章节：repo 客户端">编辑</a>]</span> <span class="mw-headline" id="repo_.E5.AE.A2.E6.88.B7.E7.AB.AF_2"> repo 客户端 </span></h3>
+<p>删除原先的 .repo 目录和所有文件
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo init <span class="re5">--repo-url</span>=<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>git-repo.git <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git <span class="re5">-b</span> master</pre></div></div>
+<p>即将所有的项目拉下来。
+</p><p><br>
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=8" title="编辑章节：创建 ebookbag 分支">编辑</a>]</span> <span class="mw-headline" id=".E5.88.9B.E5.BB.BA_ebookbag_.E5.88.86.E6.94.AF"> 创建 ebookbag 分支 </span></h2>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=9" title="编辑章节：服务器创建 ebookbag 分支">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.8D.E5.8A.A1.E5.99.A8.E5.88.9B.E5.BB.BA_ebookbag_.E5.88.86.E6.94.AF"> 服务器创建 ebookbag 分支 </span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests<span class="sy0">/</span>
+<span class="kw2">git branch</span> ebookbag master
+<span class="kw2">git checkout</span> ebookbag</pre></div></div>
+<p>编辑 default.xml 文档
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">"1.0"</span> <span class="re0">encoding</span>=<span class="st0">"utf-8"</span><span class="re2">?&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;remote</span> <span class="re0">name</span>=<span class="st0">"ebookbag"</span> <span class="re0">fetch</span>=<span class="st0">"./"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;default</span> <span class="re0">revision</span>=<span class="st0">"master"</span> <span class="re0">remote</span>=<span class="st0">"ebookbag"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/network"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/network"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git commit</span> <span class="re5">-a</span></pre></div></div>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=10" title="编辑章节：repo 客户端">编辑</a>]</span> <span class="mw-headline" id="repo_.E5.AE.A2.E6.88.B7.E7.AB.AF_3"> repo 客户端 </span></h3>
+<p>删除原先的 .repo 目录和所有文件
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo init <span class="re5">--repo-url</span>=<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>git-repo.git <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git <span class="re5">-m</span> ebookbag.xml</pre></div></div>
+<h1><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=11" title="编辑章节：使用不同配置文件管理不同项目">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E4.B8.8D.E5.90.8C.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E4.B8.8D.E5.90.8C.E9.A1.B9.E7.9B.AE"> 使用不同配置文件管理不同项目 </span></h1>
+<p>这种管理不通过branch来管理项目，而是通过不同的配置文件来管理项目。目前ebookbag项目使用该管理方式。
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=12" title="编辑章节：repo 服务器">编辑</a>]</span> <span class="mw-headline" id="repo_.E6.9C.8D.E5.8A.A1.E5.99.A8_2"> repo 服务器 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests<span class="sy0">/</span>
+<span class="kw2">git checkout</span> master</pre></div></div>
+<p>创建 ebookbag.xml
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">"1.0"</span> <span class="re0">encoding</span>=<span class="st0">"utf-8"</span><span class="re2">?&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;remote</span> <span class="re0">name</span>=<span class="st0">"ebookbag"</span> <span class="re0">fetch</span>=<span class="st0">"./"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;default</span> <span class="re0">revision</span>=<span class="st0">"master"</span> <span class="re0">remote</span>=<span class="st0">"ebookbag"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/network"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/network"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/filedialog"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebookviewer"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagcommon"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagdesktop"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/ebagexercise"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/handwrittenrecognition"</span> <span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git commit</span> <span class="re5">-a</span></pre></div></div>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=13" title="编辑章节：repo 客户端下载ebookbag项目">编辑</a>]</span> <span class="mw-headline" id="repo_.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.B8.8B.E8.BD.BDebookbag.E9.A1.B9.E7.9B.AE"> repo 客户端下载ebookbag项目 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo init  <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git <span class="re5">-m</span> ebookbag.xml</pre></div></div>
+<p>即将所有的 ebookbag 项目的工程拉下来。
+</p><p><br>
+</p>
+<h1><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=14" title="编辑章节：客户端使用">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.A2.E6.88.B7.E7.AB.AF.E4.BD.BF.E7.94.A8"> 客户端使用 </span></h1>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=15" title="编辑章节：获取repo">编辑</a>]</span> <span class="mw-headline" id=".E8.8E.B7.E5.8F.96repo"> 获取repo  </span></h2>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=16" title="编辑章节：获取所有工程">编辑</a>]</span> <span class="mw-headline" id=".E8.8E.B7.E5.8F.96.E6.89.80.E6.9C.89.E5.B7.A5.E7.A8.8B"> 获取所有工程 </span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo init  <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git <span class="re5">-b</span> master</pre></div></div>
+<p>cd .repo/manifests
+</p>
+<ol><li>执行下列操作让本地的master分支与远程的master分支对应，让本地的default分支与远程的default分支对应。
+</li><li>如果不执行。默认是本地default分支对应远程master分支。
+</li><li>要在repo sync前执行下列操作，否则无法checkout master。git branch master新建的也不是与远程对应的。
+</li></ol>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git checkout</span> master
+<span class="kw2">git branch</span> <span class="re5">-d</span> default
+<span class="kw2">git checkout</span> default</pre></div></div>
+<p>如果已经先repo sync下来了。并且default对应远程master分枝了，本地修改default.xml无法提交。则采用以下方法解决：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git checkout</span> <span class="re5">-b</span> master
+<span class="kw2">git pull</span> 
+<span class="kw2">git branch</span> <span class="re5">--set-upstream</span> master origin<span class="sy0">/</span>master
+<span class="kw2">git pull</span>
+<span class="kw2">git branch</span> <span class="re5">-d</span> default
+<span class="kw2">git checkout</span> default
+<span class="kw2">git pull</span></pre></div></div>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=17" title="编辑章节：获取 ebookbag 项目工程">编辑</a>]</span> <span class="mw-headline" id=".E8.8E.B7.E5.8F.96_ebookbag_.E9.A1.B9.E7.9B.AE.E5.B7.A5.E7.A8.8B"> 获取 ebookbag 项目工程 </span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo init  <span class="re5">-u</span> <span class="kw2">git</span><span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>manifests.git <span class="re5">-m</span> ebookbag.xml</pre></div></div>
+<p><br>
+</p>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=18" title="编辑章节：同步所有工程">编辑</a>]</span> <span class="mw-headline" id=".E5.90.8C.E6.AD.A5.E6.89.80.E6.9C.89.E5.B7.A5.E7.A8.8B"> 同步所有工程 </span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo <span class="kw2">sync</span></pre></div></div>
+<p>使用这个命令的时候需要注意本地是否都已经提交，如果没有提交，会将未提交文件覆盖。
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=19" title="编辑章节：使用 master 分支">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.BF.E7.94.A8_master_.E5.88.86.E6.94.AF">  使用 master 分支 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo start master <span class="re5">--all</span></pre></div></div>
+<p>第一次下载工程文件后，最好将所有项目都切换到 master 分支。
+</p><p>之后，每个工程都可以按照git命令来操作。
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=20" title="编辑章节：新建工程">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B0.E5.BB.BA.E5.B7.A5.E7.A8.8B"> 新建工程 </span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">ssh</span> mll<span class="sy0">@</span>192.168.4.253
+<span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>ebookbag<span class="sy0">/</span>
+&nbsp;
+<span class="kw2">mkdir</span> test_project
+<span class="kw3">cd</span> test_project
+<span class="kw2">git init</span> <span class="re5">--bare</span> 
+&nbsp;
+<span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests
+<span class="kw2">vi</span> ebookbag.xml
+添加 <span class="sy0">&lt;</span>project <span class="re2">name</span>=<span class="st0">"test_project"</span> <span class="re2">path</span>=<span class="st0">"project"</span> <span class="sy0">/&gt;</span>
+&nbsp;
+<span class="kw2">git commit</span> <span class="re5">-a</span></pre></div></div>
+<p>客户端 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo <span class="kw2">sync</span></pre></div></div>
+<p><br>
+</p>
+<h2><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=21" title="编辑章节：往远程repo添加工程：">编辑</a>]</span> <span class="mw-headline" id=".E5.BE.80.E8.BF.9C.E7.A8.8Brepo.E6.B7.BB.E5.8A.A0.E5.B7.A5.E7.A8.8B.EF.BC.9A">往远程repo添加工程：</span></h2>
+<p>本地：
+在本地新建安卓工程ebagdraw
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>mll<span class="sy0">/</span>workspace<span class="sy0">/</span>ebagdraw
+<span class="kw2">git init</span>
+<span class="kw2">git add</span> <span class="re5">-A</span>
+<span class="kw2">git commit</span> <span class="re5">-a</span> <span class="re5">-m</span> <span class="st0">"create ebagdraw"</span></pre></div></div>
+<p>远程：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>ebookbag
+<span class="kw2">git clone</span> mll<span class="sy0">@</span>192.168.4.115:<span class="sy0">/</span>home<span class="sy0">/</span>mll<span class="sy0">/</span>workspace<span class="sy0">/</span>ebagdraw ebagdraw.git <span class="re5">--bare</span>
+<span class="kw3">cd</span> <span class="sy0">/</span>srv<span class="sy0">/</span>gitdir<span class="sy0">/</span>android-apps-repo<span class="sy0">/</span>.repo<span class="sy0">/</span>manifests
+<span class="kw2">git checkout</span> master</pre></div></div>
+<p><br>
+</p><p>说明：只有切换到master提交的default.xml，通常情况下，在客户端 repo sync 时才会同步下来，否则同步不下来。
+</p><p>说明：repo init下来，默认对应的本地分支是default。
+所以在修改服务器上default.xml等文件时，应该切换到master分支下面。否则，默认情况下本地repo sync时无法同步下来。
+</p><p>具体情况可以参见 <a href="http://192.168.4.253/wiki/index.php/Git_Repo_%E9%85%8D%E7%BD%AE#.E8.8E.B7.E5.8F.96.E6.89.80.E6.9C.89.E5.B7.A5.E7.A8.8B" title="Git Repo 配置">获取所有工程</a> 后面的说明。
+如果本地分枝和远程分枝一一对应，修改defaults.xml等文件的工作也可以在本地的repo_dir/.repo/manifests下面修改，并向远程提交。
+修改defaults.xml ebookbag.xml
+添加
+&lt;project name="ebookbag/ebagdraw" path="ebookbag/ebagdraw" /&gt;
+说明：在提交之前确保ebookbag/ebagdraw的git项目存在，否则在repo sync时，会提示ebookbag/ebagdraw does not appear to be a git repository
+记得在新项目中添加 .gitignore
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git add</span> <span class="re5">-A</span>
+<span class="kw2">git commit</span></pre></div></div>
+<p>本地：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> <span class="sy0">/</span>home<span class="sy0">/</span>mll<span class="sy0">/</span>RepoProject
+repo <span class="kw2">sync</span></pre></div></div>
+<p><br>
+</p><p><br>
+</p><p>这个时候可能会有输入口令问题，建议按照以下方法解决:
+在自己本机上，比如：192.168.4.115 执行：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> ~<span class="sy0">/</span>.ssh
+<span class="kw2">ssh-keygen</span></pre></div></div>
+<p>将生成的 id_rsa.pub 拷贝到服务器192.168.4.253上 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">scp</span> id_rsa.pub root<span class="sy0">@</span>192.168.4.253:<span class="sy0">/</span>home<span class="sy0">/</span>git<span class="sy0">/</span>.ssh
+<span class="kw2">ssh</span> root<span class="sy0">@</span>192.168.4.253
+<span class="kw3">cd</span> <span class="sy0">/</span>home<span class="sy0">/</span>git<span class="sy0">/</span>.ssh
+<span class="kw2">cat</span> id_rsa.pub <span class="sy0">&gt;&gt;</span> authorized_keys</pre></div></div>
+<p>这样今后提交都可以不需要输入口令。
+</p><p>这样设置之后登录时仍旧提示“Agent admitted failure to sign using the key.”
+则在自己本机上面执行“ssh-add ~/.ssh/id_rsa”后，再次登录不用输入密码
+</p>
+<h3><span class="editsection">[<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;section=22" title="编辑章节：添加目录">编辑</a>]</span> <span class="mw-headline" id=".E6.B7.BB.E5.8A.A0.E7.9B.AE.E5.BD.95"> 添加目录 </span></h3>
+<p>如果使用过程中需要给工程分开目录，可以参考 ebookbag 的创建方法
+在 192.168.4.253:/srv/gitdir/android-apps-repo 下创建一个目录。
+然后在该目录下添加不同的git库。
+</p><p>以 ebookbag 为例：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> .repo<span class="sy0">/</span>manifests<span class="sy0">/</span>
+<span class="kw2">vi</span> default.xml</pre></div></div>
+<p>添加
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1">        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/network"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/network"</span> <span class="re2">/&gt;</span></span>
+        <span class="sc3"><span class="re1">&lt;project</span> <span class="re0">name</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re0">path</span>=<span class="st0">"ebookbag/networktest"</span> <span class="re2">/&gt;</span></span></pre></div></div>
+<p><br>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git commit</span> <span class="re5">-a</span></pre></div></div>
+<p>客户端执行
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">repo <span class="kw2">sync</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 360/1000000
+Preprocessor generated node count: 752/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key zl_wiki:pcache:idhash:2-0!*!0!!zh!*!zh!* and timestamp 20151106030346 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				来自“<a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;oldid=968">http://192.168.4.253/wiki/index.php?title=Git_Repo_配置&amp;oldid=968</a>”				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks catlinks-allhidden"></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>个人工具</h5>
+	<ul>
+		<li id="pt-createaccount"><a href="http://192.168.4.253/wiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Git+Repo+%E9%85%8D%E7%BD%AE&amp;type=signup">创建账户</a></li>
+		<li id="pt-login"><a href="http://192.168.4.253/wiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Git+Repo+%E9%85%8D%E7%BD%AE" title="我们鼓励你登录，不过这不是强制的 [alt-shift-o]" accesskey="o">登录</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>名字空间</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://192.168.4.253/wiki/index.php/Git_Repo_%E9%85%8D%E7%BD%AE" title="查看内容页面 [alt-shift-c]" accesskey="c">页面</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="http://192.168.4.253/wiki/index.php?title=Talk:Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit&amp;redlink=1" title="有关内容页面的讨论 [alt-shift-t]" accesskey="t">讨论</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu">
+	<h4>
+						不转换																												</h4>
+	<h5><span>变换</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+							<li id="ca-varlang-0" class="selected"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh" hreflang="zh" lang="zh">不转换</a></li>
+							<li id="ca-varlang-1"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hans" hreflang="zh-hans" lang="zh-hans">简体</a></li>
+							<li id="ca-varlang-2"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hant" hreflang="zh-hant" lang="zh-hant">繁體</a></li>
+							<li id="ca-varlang-3"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-cn" hreflang="zh-cn" lang="zh-cn">大陆简体</a></li>
+							<li id="ca-varlang-4"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-hk" hreflang="zh-hk" lang="zh-hk">香港繁體</a></li>
+							<li id="ca-varlang-5"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-mo" hreflang="zh-mo" lang="zh-mo">澳門繁體</a></li>
+							<li id="ca-varlang-6"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-my" hreflang="zh-my" lang="zh-my">大马简体</a></li>
+							<li id="ca-varlang-7"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-sg" hreflang="zh-sg" lang="zh-sg">新加坡简体</a></li>
+							<li id="ca-varlang-8"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;variant=zh-tw" hreflang="zh-tw" lang="zh-tw">台灣正體</a></li>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>查看</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://192.168.4.253/wiki/index.php/Git_Repo_%E9%85%8D%E7%BD%AE">阅读</a></span></li>
+					<li id="ca-edit"><span><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=edit" title="你可以编辑本页面。请在保存前使用预览按钮。 [alt-shift-e]" accesskey="e">编辑</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;action=history" title="本页面的历史版本 [alt-shift-h]" accesskey="h">查看历史</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>操作</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">搜索</label></h5>
+	<form action="/wiki/index.php" id="searchform">
+				<div>
+			<input placeholder="搜索" autocomplete="off" name="search" title="在ZLWiki中搜索 [alt-shift-f]" accesskey="f" id="searchInput" type="search">			<input name="go" value="提交" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" type="submit">			<input name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" type="submit">					<input name="title" value="Special:搜索" type="hidden">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/wiki/extensions/logo_w135_h135.jpg);" href="http://192.168.4.253/wiki/index.php/%E9%A6%96%E9%A1%B5" title="访问首页"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>导航</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://192.168.4.253/wiki/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [alt-shift-z]" accesskey="z">首页</a></li>
+			<li id="n-portal"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E7%A4%BE%E5%8C%BA%E4%B8%93%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区专页</a></li>
+			<li id="n-currentevents"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E6%96%B0%E9%97%BB%E5%8A%A8%E6%80%81" title="查看当前事件的背景信息">新闻动态</a></li>
+			<li id="n-recentchanges"><a href="http://192.168.4.253/wiki/index.php/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [alt-shift-r]" accesskey="r">最近更改</a></li>
+			<li id="n-randompage"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面 [alt-shift-x]" accesskey="x">随机页面</a></li>
+			<li id="n-help"><a href="http://192.168.4.253/wiki/index.php/Help:%E7%9B%AE%E5%BD%95" title="查找帮助的地方">帮助</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>工具箱</h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Git_Repo_%E9%85%8D%E7%BD%AE" title="所有链入本页的wiki页面列表 [alt-shift-j]" accesskey="j">链入页面</a></li>
+			<li id="t-recentchangeslinked"><a href="http://192.168.4.253/wiki/index.php/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Git_Repo_%E9%85%8D%E7%BD%AE" title="本页链入的页面的最近更改 [alt-shift-k]" accesskey="k">相关更改</a></li>
+			<li id="t-specialpages"><a href="http://192.168.4.253/wiki/index.php/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表 [alt-shift-q]" accesskey="q">特殊页面</a></li>
+			<li id="t-print"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;printable=yes" rel="alternate" title="本页面的可打印版本 [alt-shift-p]" accesskey="p">打印版本</a></li>
+			<li id="t-permalink"><a href="http://192.168.4.253/wiki/index.php?title=Git_Repo_%E9%85%8D%E7%BD%AE&amp;oldid=968" title="本页面该版本的永久链接">永久链接</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> 本页面最后修改于2014年4月1日 (星期二) 10:11。</li>
+											<li id="footer-info-viewcount">此页面已被浏览过230次。</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="ZLWiki:隐私权政策">隐私权政策</a></li>
+											<li id="footer-places-about"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E5%85%B3%E4%BA%8E" title="ZLWiki:关于">关于ZLWiki</a></li>
+											<li id="footer-places-disclaimer"><a href="http://192.168.4.253/wiki/index.php/ZLWiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="ZLWiki:免责声明">免责声明</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load_002.php"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script><script type="text/javascript" src="Git%20Repo%20%E9%85%8D%E7%BD%AE%20-%20ZLWiki_files/load_003.php"></script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<!-- Served in 0.145 secs. -->
+	
+
+<div class="suggestions" style="display: none; font-size: 14.6667px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
