@@ -1,0 +1,108 @@
+server {
+        listen       8001;
+        server_name  wifi.com;
+       
+        location / {
+            root   login;
+            index  index.html index.htm;
+        }
+
+        include fastcgi_params;
+        location ~\.cgi$ {
+                fastcgi_pass 127.0.0.1:7000;
+                fastcgi_index index.cgi;
+        }
+        
+        
+        error_page  404              /404.html;
+        location = /404.html {
+            root   html;
+            index  index.html index.htm;
+        }       
+
+	error_page   500 502 503 504  /50x.html;
+	location = /50x.html {
+		root   html;
+		index  index.html index.htm;
+	}
+
+
+}
+
+
+server {
+        listen       8002;
+        server_name  admin.com;
+       
+        location / {
+            root   admin;
+            index  index.html index.htm;
+        }
+
+        include fastcgi_params;
+        location =/admin {
+                fastcgi_pass 127.0.0.1:7001;
+                fastcgi_index index.cgi;
+        }
+        
+        
+        location =/auth {
+                fastcgi_pass 127.0.0.1:7002;
+                fastcgi_index index.cgi;
+        }
+        location =/visit {
+                fastcgi_pass 127.0.0.1:7003;
+                fastcgi_index index.cgi;
+        }
+        error_page  404              /404.html;
+        location = /404.html {
+            root   html;
+            index  index.html index.htm;
+        }       
+
+        location =/var/nginx/admin/act_check.cgi {
+                fastcgi_pass 127.0.0.1:7004;
+                fastcgi_index index.cgi;
+        }
+        location =/var/nginx/admin/activator.cgi {
+                fastcgi_pass 127.0.0.1:7005;
+                fastcgi_index index.cgi;
+        }
+
+        location =/passwdcgi {
+                fastcgi_pass 127.0.0.1:7006;
+                fastcgi_index index.cgi;
+        }
+
+       	error_page   500 502 503 504  /50x.html;
+	location = /50x.html {
+		root   html;
+		index  index.html index.htm;
+	}
+
+
+}
+        
+
+   server {
+        listen       80;
+        server_name  bookbox.gw;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+	
+        error_page  404              /404.html;
+        location = /404.html {
+            root   html;
+            index  index.html index.htm;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+            index  index.html index.htm;
+        }
+}
+
